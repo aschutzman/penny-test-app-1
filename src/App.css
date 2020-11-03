@@ -60,3 +60,7 @@ nav a.navbar-brand {
 #CustomApp #search-results { 
   padding: 20px;
 }
+
+#CustomApp .seasons-custom {
+  padding: 20px 0;
+}

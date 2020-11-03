@@ -23,9 +23,9 @@ class App extends React.Component {
     axios.get(`http://api.tvmaze.com/search/shows?q=` + this.state.searchVal)
       .then(res => {
         this.setState({ shows: res.data });
-        this.setState({seasons: []});
-        this.setState({selectedShow: null });
-        this.setState({episodes: []});
+        this.setState({ seasons: [] });
+        this.setState({ selectedShow: null });
+        this.setState({ episodes: [] });
       })
   }
 
@@ -74,9 +74,10 @@ class App extends React.Component {
                 <button type="button" className="form-control search-custom-btn" onClick={this.searchSubmit}>Search</button>
               </div>
             </div>
-            <ul className="list-group" id="search-results">
-              {
-                this.state.shows.map((d, index) => {
+            {
+              this.state.shows.length > 0 &&
+              <ul className="list-group" id="search-results">
+                {this.state.shows.map((d, index) => {
                   return (
                     <li className="list-group-item show-item row" key={d.show.id}>
                       <img src={d.show.image.medium} className="img-thumbnail"></img>
@@ -88,11 +89,12 @@ class App extends React.Component {
                     </li>
                   )
                 })
-              }
-            </ul>
+                }
+              </ul>
+            }
             {
               this.state.seasons.length > 0 &&
-              <div className="row">
+              <div className="row seasons-custom">
                 <div className="col-md-3">
                   <img src={this.state.selectedShow.show.image.medium}></img>
                 </div>

@@ -1,4 +1,37 @@
-.App {
+nav { 
+  background: #071c40;
+}
+
+nav a.navbar-brand { 
+  padding-left: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+#CustomApp .search-custom-btn { 
+  background-color: #071c40;
+  color: white;
+  font-weight: bold;
+}
+
+#CustomApp .jumbotron { 
+  margin-top: 40px;
+}
+
+#CustomApp .search-icon-custom { 
+  position: absolute;
+  top: 12px;
+  left: 25px;
+}
+
+#CustomApp .search-input-custom { 
+  padding-left: 35px;
+}
+
+.custom { 
+  padding: 20px 0;
+}
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +68,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

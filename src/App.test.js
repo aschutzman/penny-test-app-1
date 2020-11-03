@@ -1,8 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+
+test('the searchVal state value is set on input type', ()=> {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+  let inputElement = screen.getByPlaceholderText(/search show titles/);
+  expect(inputElement).toBeInTheDocument();
+
+  inputElement.setAttribute("value", "bad");
+  
+})
